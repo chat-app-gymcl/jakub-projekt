@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+var datum = new Date(); // aktuální datum
+var denVTydnu = new Array("neděle","pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota");
+var retezec = "Dnes je "; // postupně se k němu budou přičítat další řetězce
+retezec += denVTydnu[datum.getDay()] + ", "; // Den v týdnu
+retezec += datum.getDate() + ". "; // Den v měsíci
+retezec += (1 + datum.getMonth()) + ". "; // Měsíce jsou číslovány od nuly
+retezec += datum.getFullYear() + ". "; // Rok ve formátu 0000
+retezec += "Čas: " + datum.getHours() + ":"; // Hodiny
+retezec += datum.getMinutes(); // Minuty
+// retezec += ":" + datum.getSeconds(); // Sekundy
+retezec += "."; // Tečka za větou
+document.write( retezec ); // Výpis řetězce do dokumentu
+</script>
+<br>
+
+<style>
+img {
+  width: 50%;
+}
+</style>
+        <img src="15462.png" alt=".">
+
+        
+<form>
+    <p>Vyber aktuální stanici/nápis.</p>
+    <select name="platforma2" size="10" multiple>
+<option value="ZAK15462">Os 15462 ->Lomnice nad Popelkou
+<option value="KK" selected>——KolejKlub——
+<option value="MH">Mnichovo Hradiště
+<option value="BnJ">Březina nad Jizerou
+<option value="LuMH">Loukov u Mnichova Hradiště
+<option value="Pri">Příšovice
+<option value="Tur">Turnov
+<option value="TurM">Turnov město</option>
+<option value="TurD">Turnov - depo</option>
+<option value="KS">Karlovice Sedmihorky</option>
+<option value="HS">Hrubá Skála</option>
+<option value="BpT">Borek pod Troskami</option>
+<option value="Kt">Ktová</option>
+<option value="RpT">Rovensko pod Troskami</option>
+<option value="SL">Semínova Lhota</option>
+<option value="Ja">Jívany</option>
+<option value="Lz">Libuň zástavka</option>
+<option value="Li">Libuň</option>
+<option value="Kn">Kněžice</option>
+<option value="Ci">Cidlina</option>
+<option value="KuJ">Kyje u Jičína</option>
+<option value="Pl">Ploužnice</option>
+<option value="LnP">Lomnice nad Popelkou</option>
+</select>
+<p>Zadej čas odjezdu z aktuální zastávky
+<input type="time" id="cas" name="cas">
+<p>Vyber následující zastávku.</p>
+    <select name="platforma3" size="10" multiple>
+<option value="ZAK15462">Os 15462 ->Lomnice nad Popelkou
+<option value="KK" selected>——KolejKlub——
+<option value="MH">Mnichovo Hradiště
+<option value="BnJ">Březina nad Jizerou
+<option value="LuMH">Loukov u Mnichova Hradiště
+<option value="Pri">Příšovice
+<option value="Tur">Turnov
+<option value="TurM">Turnov město</option>
+<option value="TurD">Turnov - depo</option>
+<option value="KS">Karlovice Sedmihorky</option>
+<option value="HS">Hrubá Skála</option>
+<option value="BpT">Borek pod Troskami</option>
+<option value="Kt">Ktová</option>
+<option value="RpT">Rovensko pod Troskami</option>
+<option value="SL">Semínova Lhota</option>
+<option value="Ja">Jívany</option>
+<option value="Lz">Libuň zástavka</option>
+<option value="Li">Libuň</option>
+<option value="Kn">Kněžice</option>
+<option value="Ci">Cidlina</option>
+<option value="KuJ">Kyje u Jičína</option>
+<option value="Pl">Ploužnice</option>
+<option value="LnP">Lomnice nad Popelkou</option>
+</select>
+<p>Zadej pravděpodobný čas příjezdu(odjezdu) do  zastávky.
+<input type="time" id="cas1" name="cas1">
+<button type="button" oneclik="zadej()">Zadej data</button>
+
+</form>
+<script>
+
+</script>
+    </body>
+</html>
