@@ -29,7 +29,7 @@ img {
         
 <form>
     <p>Vyber aktuální stanici/nápis.</p>
-    <select name="platforma2" size="10" multiple>
+    <select id="aktzastavka" name="platforma2" size="10" multiple>
 <option value="ZAK15462">Os 15462 ->Lomnice nad Popelkou
 <option value="KK" selected>——KolejKlub——
 <option value="MH">Mnichovo Hradiště
@@ -57,7 +57,7 @@ img {
 <p>Zadej čas odjezdu z aktuální zastávky
 <input type="time" id="cas" name="cas">
 <p>Vyber následující zastávku.</p>
-    <select name="platforma3" size="10" multiple>
+    <select id="naszastavka" name="platforma3" size="10" multiple>
 <option value="ZAK15462">Os 15462 ->Lomnice nad Popelkou
 <option value="KK" selected>——KolejKlub——
 <option value="MH">Mnichovo Hradiště
@@ -86,15 +86,15 @@ img {
 <input type="time" id="cas1" name="cas1">
 <button type="button" oneclik="zadej()">Zadej data</button>
 
+<p id="textaktzastavka"></p>aktzastavka
+<p id="textcas"></p>aktzastavka
+<p id="textnaszastavka"></p>aktzastavka
 
-
-<select id="selectbox" name="">
-    <option value="https://www.yahoo.com/" selected>Option1</option>
-    <option value="https://www.google.co.in/">Option2</option>
-    <option value="https://www.gmail.com/">Option3</option>
-    <button type="button" oneclik="javascript:location.href = this.value;">Zadej data</button>
-
-</select>
+<script>
+    document.getElementById("textaktzastavka").innerHTML = document.getElementById('aktzastavka').selectedOptions[0].value;
+    document.getElementById("textcas").innerHTML = document.getElementById('cas').selectedOptions[0].value;
+    document.getElementById("textnaszastavka").innerHTML = document.getElementById('naszastavka').selectedOptions[0].value;
+</script>
 </form>
     </body>
 </html>
