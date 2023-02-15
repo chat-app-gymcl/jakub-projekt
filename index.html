@@ -86,14 +86,17 @@ img {
 <input type="time" id="cas1" name="cas1">
 <button type="button" oneclik="zadej()">Zadej data</button>
 
-<p id="textaktzastavka"></p>
-<p id="textcas"></p>
-<p id="textnaszastavka"></p>
+<p id="textaktzastavka">aktzastavka</p>
+<p id="textcas">cas</p>
+<p id="textnaszastavka">naszastavka</p>
+<p id="textcas">cas1</p>
 
 <script>
     document.getElementById("textaktzastavka").innerHTML = document.getElementById('aktzastavka').selectedOptions[0].value;
     document.getElementById("textcas").innerHTML = document.getElementById('cas').selectedOptions[0].value;
     document.getElementById("textnaszastavka").innerHTML = document.getElementById('naszastavka').selectedOptions[0].value;
+    document.getElementById("textcas1").innerHTML = document.getElementById('cas1').selectedOptions[0].value;
+
 </script>
 </form>
     </body>
