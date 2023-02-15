@@ -84,19 +84,26 @@ img {
 </select>
 <p>Zadej pravděpodobný čas příjezdu(odjezdu) do  zastávky.
 <input type="time" id="cas1" name="cas1">
-<button type="button" oneclik="zadej()">Zadej data</button>
+<button id="submit">Zadej data</button>
 
-<p id="textaktzastavka">aktzastavka</p>
-<p id="textcas">cas</p>
-<p id="textnaszastavka">naszastavka</p>
-<p id="textcas">cas1</p>
+<p id="textaktzastavka"></p>
+<p id="textcas"></p>
+<p id="textnaszastavka"></p>
+<p id="textcas"></p>
 
 <script>
-    document.getElementById("textaktzastavka").innerHTML = document.getElementById('aktzastavka').selectedOptions[0].value;
-    document.getElementById("textcas").innerHTML = document.getElementById('cas').selectedOptions[0].value;
-    document.getElementById("textnaszastavka").innerHTML = document.getElementById('naszastavka').selectedOptions[0].value;
-    document.getElementById("textcas1").innerHTML = document.getElementById('cas1').selectedOptions[0].value;
+    document.getElementById('submit').onclick = function() {
+    var selectact = document.getElementById('aktzastavka');
+    var selectedact = [...select.selectedOptions]
+    var selectnas = document.getElementById('naszastavka');
+    var selectednas = [...select.selectedOptions]
+                    .map(option => option.value);
+    document.getElementById("textaktzastavka").innerHTML = selectedact;
+    document.getElementById("textcas").innerHTML = selected;
+    document.getElementById("textnaszastavka").innerHTML = selectednas;
+    document.getElementById("textcas1").innerHTML = selected;
 
+}
 </script>
 </form>
     </body>
