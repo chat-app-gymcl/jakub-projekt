@@ -4,29 +4,33 @@
 
 <head>
 
-  <title>Zobrazení exportovaných dat</title>
 
 </head>
 
 <body>
 
-  <h1>Zobrazení exportovaných dat</h1>
 
-  <div>
 
-    <label for="jmeno">Jméno:</label>
+    <label for="aktzastavka">Aktuální stanice:</label>
 
-    <span id="jmeno"></span>
+    <span id="aktzastavka"></span>
 
-  </div>
 
-  <div>
+    <label for="cas">Čas odjezdu z aktuální zastávky:</label>
 
-    <label for="email">Email:</label>
+    <span id="cas"></span>
 
-    <span id="email"></span>
 
-  </div>
+    <label for="naszastavka">Čas odjezdu z aktuální zastávky:</label>
+
+    <span id="naszastavka"></span>
+
+
+    <label for="cas1">Čas odjezdu z aktuální zastávky:</label>
+
+    <span id="cas1"></span>
+
+
 
   
 
@@ -36,9 +40,13 @@
 
     const data = JSON.parse(json); // převod JSON řetězce na objekt
 
-    document.querySelector('#jmeno').textContent = data.jmeno; // zobrazení dat v HTML
+    document.querySelector('#aktzastavka').textContent = data.aktzastavka; // zobrazení dat v HTML
 
-    document.querySelector('#email').textContent = data.email;
+    document.querySelector('#cas').textContent = data.cas;
+
+    document.querySelector('#naszastavka').textContent = data.naszastavka;
+
+    document.querySelector('#cas1').textContent = data.cas1;
 
   </script>
 

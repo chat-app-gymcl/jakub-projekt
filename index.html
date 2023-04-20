@@ -28,6 +28,7 @@ img {
 
         
     <p>Vyber aktuální stanici/nápis.</p>
+    <form action="druha_stranka.html" method="post">
     <select id="aktzastavka" name="platforma2" size="10" multiple>
 <option value="ZAK15462">Os 15462 ->Lomnice nad Popelkou
 <option value="KK" selected>——KolejKlub——
@@ -83,26 +84,28 @@ img {
 </select>
 <p>Zadej pravděpodobný čas příjezdu(odjezdu) do  zastávky.
 <input type="time" id="cas1" name="cas1">
-<button type="button" oneclik="zadej()" id="submit">Zadej data</button>
 
-<p id="textaktzastavka"></p>
-<p id="textcas"></p>
-<p id="textnaszastavka"></p>
-<p id="textcas"></p>
+<button type="submit">Odeslat</button>
 
-<script>
-    document.getElementById('submit').onclick = function() {
-    var selectact = document.getElementById('aktzastavka');
-    var selectedact = [...select.selectedOptions]
-    var selectnas = document.getElementById('naszastavka');
-    var selectednas = [...select.selectedOptions]
-                    .map(option => option.value);
-    document.getElementById("textaktzastavka").innerHTML = selectedact;
-    document.getElementById("textcas").innerHTML = selected;
-    document.getElementById("textnaszastavka").innerHTML = selectednas;
-    document.getElementById("textcas1").innerHTML = selected;
+  </form>
 
-}
-</script>
+  <script>
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+
+      event.preventDefault(); // zabrání odeslání formuláře na server
+
+      const data = new FormData(event.target); // získání dat z formuláře
+
+      const json = JSON.stringify(Object.fromEntries(data.entries())); // převod dat na JSON řetězec
+
+      localStorage.setItem('form-data', json); // uložení dat do localStorage
+
+      window.location.href = 'druha_stranka.html'; // přesměrování na druhou stránku
+
+    });
+
+  </script>
+  
     </body>
 </html>
