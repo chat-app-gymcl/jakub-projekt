@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Zobrazení exportovaných dat</title>
+
+</head>
+
+<body>
+
+  <h1>Zobrazení exportovaných dat</h1>
+
+  <div>
+
+    <label for="jmeno">Jméno:</label>
+
+    <span id="jmeno"></span>
+
+  </div>
+
+  <div>
+
+    <label for="email">Email:</label>
+
+    <span id="email"></span>
+
+  </div>
+
+  
+
+  <script>
+
+    const json = localStorage.getItem('form-data'); // načtení dat z localStorage
+
+    const data = JSON.parse(json); // převod JSON řetězce na objekt
+
+    document.querySelector('#jmeno').textContent = data.jmeno; // zobrazení dat v HTML
+
+    document.querySelector('#email').textContent = data.email;
+
+  </script>
+
+</body>
+
+</html>
