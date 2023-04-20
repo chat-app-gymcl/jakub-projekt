@@ -40,7 +40,7 @@
 
     const data = JSON.parse(json); // převod JSON řetězce na objekt
 
-    document.querySelector('#aktzastavka').textContent = data; // zobrazení dat v HTML
+    document.querySelector('#aktzastavka').textContent = data.aktzastavka; // zobrazení dat v HTML
 
     document.querySelector('#cas').textContent = data.cas;
 
