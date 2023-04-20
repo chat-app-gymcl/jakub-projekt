@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Export dat z formuláře</title>
+
+</head>
+
+<body>
+
+  <h1>Export dat z formuláře</h1>
+
+  <form action="druha_stranka.html" method="post">
+
+    <div>
+
+      <label for="jmeno">Jméno:</label>
+
+      <input type="text" id="jmeno" name="jmeno">
+
+    </div>
+
+    <div>
+
+      <label for="email">Email:</label>
+
+      <input type="email" id="email" name="email">
+
+    </div>
+
+    <button type="submit">Odeslat</button>
+
+  </form>
+
+  
+
+  <script>
+
+    document.querySelector('form').addEventListener('submit', function(event) {
+
+      event.preventDefault(); // zabrání odeslání formuláře na server
+
+      const data = new FormData(event.target); // získání dat z formuláře
+
+      const json = JSON.stringify(Object.fromEntries(data.entries())); // převod dat na JSON řetězec
+
+      localStorage.setItem('form-data', json); // uložení dat do localStorage
+
+      window.location.href = 'druha_stranka.html'; // přesměrování na druhou stránku
+
+    });
+
+  </script>
+
+</body>
+
+</html>
+
